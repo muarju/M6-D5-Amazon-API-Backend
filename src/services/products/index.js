@@ -72,5 +72,26 @@ router
       next(error);
     }
   });
+  router
+  .route("/pagination/:offset/:limit")
+  .get(async (req, res, next) => {
+    try {
+      const { offset, limit } = req.params
+      const {order} = req.query
   
+      const data = await Product.findAll({
+        include: Category,
+        limit: limit,
+        offset: offset,
+      })
+      if (data) {
+        res.status(200).send(data)
+      } else {
+        res.status(404).send("not found")
+      }
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  })
 export default router;
