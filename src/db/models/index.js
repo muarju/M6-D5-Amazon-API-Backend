@@ -21,7 +21,8 @@ User.hasMany(Orders)
 
 //relation between Order, Product and cart
 Cart.belongsTo(Orders)
-Orders.hasMany(Cart,{ onDelete: "cascade",})
+Orders.hasMany(Cart,{ onDelete: "CASCADE",hooks:true});
+
 
 Cart.belongsTo(Product)
 Product.hasMany(Cart)
