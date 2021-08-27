@@ -2,6 +2,7 @@ import express from "express";
 import db from "../../db/models/index.js";
 const User=db.User;
 const Orders=db.Orders;
+const Cart=db.Cart;
 import s from "sequelize";
 const { Op } = s;
 
@@ -12,7 +13,7 @@ router
   .get(async (req, res, next) => {
     try {
       const data = await Orders.findAll({
-        include: User,
+        include: [User, Cart]
       });
       res.send(data);
     } catch (error) {
@@ -35,7 +36,7 @@ router
   .get(async (req, res, next) => {
     try {
       const data = await Orders.findByPk(req.params.id,{
-        include: User,
+        include: [User, Cart]
       });
       res.send(data);
     } catch (error) {
