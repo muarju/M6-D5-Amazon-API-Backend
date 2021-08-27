@@ -5,6 +5,7 @@ import productsRoutes from "./services/products/index.js";
 import userRoutes from './services/users/index.js';
 import commentRoutes from './services/comment/index.js'
 import ordersRoutes from './services/orders/index.js'
+import cartRoutes from './services/cart/index.js'
 import cors from "cors";
 
 const app = express();
@@ -19,6 +20,7 @@ app.use("/product", productsRoutes);
 app.use("/users", userRoutes);
 app.use("/comment", commentRoutes);
 app.use("/orders", ordersRoutes);
+app.use("/cart",cartRoutes);
 
 db.sequelize
   .sync()
