@@ -1,0 +1,31 @@
+{
+  "name": "m6-d3-sequelize-orm-for-postgresql",
+  "version": "1.0.0",
+  "description": "D3 - Sequelize - ORM for PostgreSQL API CRUD",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muarju/m6-d3-Sequelize-ORM-for-PostgreSQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muarju/m6-d3-Sequelize-ORM-for-PostgreSQL/issues"
+  },
+  "homepage": "https://github.com/muarju/m6-d3-Sequelize-ORM-for-PostgreSQL#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
