@@ -26,4 +26,4 @@ Orders.hasMany(Cart,{ onDelete: "cascade",})
 Cart.belongsTo(Product)
 Product.hasMany(Cart)
 
-export default { Category, sequelize, Product,User,Comment };
+export default { Category, sequelize, Product,User,Comment,Orders,Cart};
