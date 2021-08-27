@@ -20,6 +20,15 @@ router
       next(error);
     }
   })
+  .post(async (req, res, next) => {
+    try {
+      const data = await Orders.create(req.body);
+      res.send(data);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  });
 
 router
   .route("/:id")
@@ -63,15 +72,5 @@ router
       next(error);
     }
   });
-router
-  .route("/:ProductId/:userId")
-  .post(async (req, res, next) => {
-    try {
-      const data = await Comment.create({...req.body,productId: req.params.ProductId,userId: req.params.userId});
-      res.send(data);
-    } catch (error) {
-      console.log(error);
-      next(error);
-    }
-  });
+
 export default router;
