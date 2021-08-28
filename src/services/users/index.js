@@ -88,7 +88,7 @@ router
       }});
        // check account found and verify password
       if (!data || !bcrypt.compareSync(password, data.password)) {
-        res.status(401).send("authentication failed");
+        res.status(200).send("authentication failed");
       } else {
         // authentication successful
         res.send(data);
