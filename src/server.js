@@ -24,6 +24,7 @@ app.use("/cart",cartRoutes);
 
 db.sequelize
   .sync({
+    //alter: true,
     //force: true,
   })
   .then(() => {
